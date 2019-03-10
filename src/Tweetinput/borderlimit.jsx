@@ -9,7 +9,7 @@ class BorderLimit extends Component {
   
   render() {
     let  boxLimit;
-    let completionperc = this.state.Tweets * (100 / 10);
+    let completionperc = this.state.Tweets * (100 / 240);
     let Bopacity = completionperc / 100;
     boxLimit = {
       border: `3px solid rgba(255,0,0, ${Bopacity})`,
@@ -17,7 +17,7 @@ class BorderLimit extends Component {
     };
 
     let inputStyle;
-    if (this.state.Tweets > 10) {
+    if (this.state.Tweets > 240) {
       inputStyle = {
         color: "red"
       };

@@ -3,7 +3,7 @@ import './Tweetinput.css'
 
 const Tweetinput = (props) =>{
     let boxLimit;
-    let completionperc = props.Tweets * (100 / 240);
+    let completionperc = props.Tweets * (100 / props.maxText);
     let Bopacity = completionperc / 100;
     boxLimit = {
       border: `3px solid rgba(255,0,0, ${Bopacity})`,
@@ -11,9 +11,8 @@ const Tweetinput = (props) =>{
     };
 
     let inputStyle;
-    if (props.Tweets > 240) {
+    if (props.Tweets > props.maxText) {
       inputStyle = {
-        color: "red"
       };
     }
     
@@ -29,7 +28,7 @@ const Tweetinput = (props) =>{
         />
         <button
           onClick={props.submittedClick}
-          disabled={props.Tweets > 240}
+          disabled={props.Tweets > props.maxText}
         >
           tweet
         </button>

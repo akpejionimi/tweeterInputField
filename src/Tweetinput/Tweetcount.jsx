@@ -8,8 +8,8 @@ class Tweeter extends Component {
     Tweets: 0,
     data: data,
     details: data[1],
-    
-    
+    maxText: 240,
+    borderColor: "red"
   };
 
   
@@ -42,7 +42,10 @@ class Tweeter extends Component {
       submittedClick={this.submittedClick}
       Tweetcount={this.TweetCount}
       data={this.state.data}
-      details={this.state.details}/>
+      details={this.state.details}
+      maxText={this.state.maxText}
+      bColor={this.state.borderColor}/>
+      
      
      </>
     );
